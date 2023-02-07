@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //This function multiplyes then adds 10 then divides the whole number by 2 and then from the final number subtracts 5
+         function mindGame(){
+             let number =prompt("Please Enter a number");
+             number = parseFloat(number);
+             
+             
+             if (!isNaN(number)){
+             number = (((number*3)+10)/2)-5;
+             return number;
+             }
+
+             return 'Enter valid number';
+         }
+
+         console.log(mindGame());
+
+
+         //This function checks if the lenght of the string entered is even or odd
+         function evenOdd(){
+             let favouriteColor = prompt("Enter Your favourite color");
+
+             return (favouriteColor.length%2 ==0? 'even':'odd');
+    
+         }
+
+         console.log(evenOdd());
+
+
+        //User enters a number and 7 is subtracted from the number. If the reuslt is less than 7 we return the number, else we multile the number with 2
+         function isLGSeven(){
+             let num = prompt('Please Enter a number');
+             num = parseFloat(num);
+             
+             if(!isNaN(num)){
+             num = num-7;
+             return(num<7? num: num*2);
+             }
+
+             else return 'Enter valid number';
+             
+         }
+
+          console.log(isLGSeven());
+
+
+        //The user enters a series of age numbes, we count the number of negative values entired  
+        function findingBadData(){
+             let ages = [];
+
+             let allNumbers =true;
+             let countBadData = 0;
+
+             for(let i=0; i<7; i++){
+                ages[i] = prompt('Enter an age'); 
+                ages[i] = parseFloat(ages[i]);
+                if(isNaN(ages[i])){
+                    return 'Enter all valid numbers';
+                    allNumbers = false;
+                    break;
+                }
+             }
+
+             if(allNumbers){
+             for(const items of ages){
+                if(items<0) countBadData++;
+             }
+              return countBadData;
+            }
+        }
+
+        console.log(findingBadData());
+
+
+        //We take 3 numbers from the user and multiple them with 21,32,43 respectively and add all numbers. If the total is greater than 2000 we subtract 2000 points else we just return the total
+        function gemsToDiamond(firstFriend,secondFriend,thirdFriend){
+             firstFriend = firstFriend *21;
+             secondFriend = secondFriend *32;
+             thirdFriend = thirdFriend *43;
+             
+             let total = firstFriend+secondFriend+thirdFriend;
+             return (total > 1000*2? total=total-2000: total);
+        }
+
+        let firstFriendGems = prompt("Enter the number of gems for first friend");
+        firstFriendGems = parseFloat(firstFriendGems);
+        let secondFriendGems = prompt("Enter the number of gems for second friend");
+        secondFriendGems = parseFloat(secondFriendGems);
+        let thirdFriendGems = prompt("Enter the number of gems for third friend");
+        thirdFriendGems = parseFloat(thirdFriendGems);
+
+        if(!isNaN(firstFriendGems) && !isNaN(secondFriendGems) && !isNaN(thirdFriendGems)){
+        console.log(gemsToDiamond(firstFriendGems,secondFriendGems,thirdFriendGems));
+        }
+
+        else console.log('Enter valid number');
+
+    </script>
+</body>
+</html>
